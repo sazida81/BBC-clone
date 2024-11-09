@@ -1,18 +1,13 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
-
-import Card from './Card.jsx'
-
+import Signin from './components/Signin';
 function App() {
   
   return (
-    <>
-      <div>
-      <Card />
-        </div>
-    </>
+    <div>
+      < Signin />
+    </div>
   )
 }
 
