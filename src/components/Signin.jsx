@@ -3,13 +3,17 @@ import front from '../assets/front.png';
 import logo from '../assets/logo.png';
 import { signInWithPopup } from 'firebase/auth';
 import {auth, goggleProvider} from '../firebase/setup.jsx'
+import { useNavigate } from 'react-router-dom';
 
 function Signin() {
+
+        const nevigate = useNavigate();
 
         const goggleSignin = async()=>{
             try{
                 await signInWithPopup(auth,goggleProvider)
-            }catch(error){
+                auth.currentUser && nevigate("/")
+            }catch(err){
                 console.error(err)
             }
         }
